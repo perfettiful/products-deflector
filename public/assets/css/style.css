@@ -10,14 +10,20 @@ html, body {
 }
 
 #screen {
-	width:100%;
-	height:100%;
+	width:1000px;
+	height:1000pxs;
 	margin:auto auto;
 	position: fixed;
 	top: 0; 
 	bottom: 0;
 	left: 0; 
-	right: 0;
-	background: #bbb;
+	right: 10;
+	background: rgb(116, 194, 255);
 	cursor: pointer;
+}
+
+canvas{
+
+	width: 1000px;
+	height: 1000px
 }

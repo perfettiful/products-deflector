@@ -25,7 +25,8 @@
           PHY2D.rectangle(screen.width + 50, 0, 100, screen.height * 4, 0, 0);
         }
       }
-    }
+    }//End Screen var defition
+
     screen.elem.onselectstart = function() {
       return false;
     }
@@ -33,6 +34,8 @@
       return false;
     }
     var ctx = screen.elem.getContext("2d");
+    ctx.fillStyle = 'blue';
+
     window.addEventListener('resize', screen.resize, false);
   
     /* ==== pointer setup ==== */
@@ -455,6 +458,7 @@
         draw: function() {
           if (this.img) {
             var m = this.matrix;
+            ctx.fillStyle = 'rgb(116, 194, 255)';
             ctx.save();
             ctx.translate(m.pos.x, m.pos.y);
             ctx.rotate(m.ang);
@@ -643,6 +647,11 @@
         number: function(w, h, text) {
           var img = document.createElement("canvas");
           var context = img.getContext("2d");
+
+          var icon = new Image();
+          icon.src = "../images/prayinghandsVECTOR.png";
+          context.drawImage(icon,0, 0)
+
           img.width = w;
           img.height = h;
           context.font = "bold " + (w * 0.92) + "px arial";
@@ -670,8 +679,9 @@
   
     function n(n) {
       //return "|";
-      return n % 4 == 0 ? "L" : "#";
+      // return n % 4 == 0 ? <img src="../images/barcodeflagVECTOR.png"> : <img src="../images/prayinghandsVECTOR.png">;
       //return n > 9 ? "" + n : "" + n;
+      return n % 4 == 0 ? "X": "Y";
     }
   
     var hb = "",
@@ -742,12 +752,16 @@
       xp++;
     }
     toc();
-    setInterval(toc, 50);
+    setInterval(toc, 100);
   
     /* ==== main loop ==== */
     function run() {
       requestAnimationFrame(run);
       ctx.clearRect(0, 0, screen.width, screen.height);
+      ctx.beginPath();
+      ctx.rect(0, 0, 10000, 1000);
+      ctx.fillStyle = 'rgb(116, 194, 255)'
+      ctx.fill();
       PHY2D.render();
     }
     requestAnimationFrame(run);
