@@ -657,7 +657,7 @@
            if (random > 0.5){
               icon.src = "https://github.com/perfettiful/products-deflector/blob/master/public/assets/images/prayinghandsVECTOR.png?raw=true";
            } else {
-               icon.src = "https://github.com/perfettiful/products-deflector/blob/master/public/assets/images/barcodeflagVECTOR.png?raw=true";
+               icon.src = "https://github.com/perfettiful/products-deflector/blob/master/public/assets/images/barcodeflagVECTORfilled.png?raw=true";
 
            }
           
