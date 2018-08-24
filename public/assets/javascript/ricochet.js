@@ -649,14 +649,24 @@
           var context = img.getContext("2d");
 
           var icon = new Image();
-          icon.src = "../images/prayinghandsVECTOR.png";
-          context.drawImage(icon,0, 0)
+          // icon.src = "https://github.com/perfettiful/products-deflector/blob/master/public/assets/images/barcodeflagVECTOR.png?raw=true";
+          
+          var random = Math.random();
+         
+          
+           if (random > 0.5){
+              icon.src = "https://github.com/perfettiful/products-deflector/blob/master/public/assets/images/prayinghandsVECTOR.png?raw=true";
+           } else {
+               icon.src = "https://github.com/perfettiful/products-deflector/blob/master/public/assets/images/barcodeflagVECTOR.png?raw=true";
 
-          img.width = w;
-          img.height = h;
-          context.font = "italic " + (w * 0.52) + "px calibri";
-          context.fillStyle = hsl;
-          context.fillText(text, 0, h * 0.97);
+           }
+          
+          img.width = 1.5*w;
+          img.height = 1.5*h;
+          context.drawImage(icon,0, 0);
+          //context.font = "italic " + (w * 0.52) + "px calibri";
+          //context.fillStyle = hsl;
+          //context.fillText(text, 0, h * 0.97);
           return img;
         },
   
@@ -693,7 +703,7 @@
     var hour, minut, seconds = [];
   
     function addNumber(w, x, t, m, a) {
-      var h = (w * 0.69) | 0;
+      var h = w | 0;
       var img = PHY2D.number(w, h, t);
       return PHY2D.rectangle(x, -w, w, h, m, a, img);
   
@@ -752,7 +762,7 @@
       xp++;
     }
     toc();
-    setInterval(toc, 100);
+    setInterval(toc, 50);
   
     /* ==== main loop ==== */
     function run() {
