@@ -654,7 +654,7 @@
 
           img.width = w;
           img.height = h;
-          context.font = "bold " + (w * 0.92) + "px arial";
+          context.font = "italic " + (w * 0.52) + "px calibri";
           context.fillStyle = hsl;
           context.fillText(text, 0, h * 0.97);
           return img;
